@@ -1,4 +1,26 @@
+"use client"
+
+import { useState } from "react"
+
+const sliderImages = [
+  "https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg",
+  "https://images.pexels.com/photos/261050/pexels-photo-261050.jpeg",
+  "https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg",
+]
+
 export default function Home() {
+  const [current, setCurrent] = useState(0)
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % sliderImages.length)
+  }
+
+  const prevSlide = () => {
+    setCurrent((prev) =>
+      prev === 0 ? sliderImages.length - 1 : prev - 1
+    )
+  }
+
   return (
     <div className="min-h-screen bg-sky-50">
       {/* Header */}
@@ -20,7 +42,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero بدون تصویر، تمیز و خوانا */}
+      {/* Hero با اسلایدر */}
       <section className="bg-sky-900 text-sky-50">
         <div className="max-w-5xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-8 items-center">
           <div>
@@ -38,10 +60,40 @@ export default function Home() {
             </a>
           </div>
 
-          {/* باکس خالی که بعداً عکس/ویدئو شنا می‌گذاریم */}
-          <div className="rounded-3xl overflow-hidden shadow-2xl border border-sky-800 bg-sky-800/60">
-            <div className="h-48 sm:h-56 flex items-center justify-center text-sky-300 text-xs">
-              اینجا بعداً ویدئو/عکس شنا قرار می‌گیرد
+          {/* اسلایدر عکس‌ها */}
+          <div className="rounded-3xl overflow-hidden shadow-2xl border border-sky-800 bg-sky-900/70">
+            <div
+              className="relative h-48 sm:h-56 w-full bg-cover bg-center transition-all duration-500"
+              style={{ backgroundImage: `url(${sliderImages[current]})` }}
+            >
+              {/* دکمه قبلی */}
+              <button
+                type="button"
+                onClick={prevSlide}
+                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-sky-900/70 text-sky-50 text-xs px-2 py-1"
+              >
+                ‹
+              </button>
+              {/* دکمه بعدی */}
+              <button
+                type="button"
+                onClick={nextSlide}
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-sky-900/70 text-sky-50 text-xs px-2 py-1"
+              >
+                ›
+              </button>
+
+              {/* نقاط وضعیت اسلاید */}
+              <div className="absolute bottom-2 inset-x-0 flex justify-center gap-1">
+                {sliderImages.map((_, index) => (
+                  <span
+                    key={index}
+                    className={`h-1.5 w-3 rounded-full ${
+                      index === current ? "bg-cyan-400" : "bg-sky-600"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
