@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div className="min-h-screen bg-sky-50">
-      {/* Header ساده */}
+      {/* Header */}
       <header className="bg-sky-900 text-sky-50">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -20,7 +20,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero با عکس استخر و دکمه فیروزه‌ای */}
+      {/* Hero بدون تصویر، تمیز و خوانا */}
       <section className="bg-sky-900 text-sky-50">
         <div className="max-w-5xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-8 items-center">
           <div>
@@ -38,15 +38,11 @@ export default function Home() {
             </a>
           </div>
 
-          {/* باکس عکس استخر */}
-          <div className="rounded-3xl overflow-hidden shadow-2xl border border-sky-800">
-            <div
-              className="h-48 sm:h-56 bg-cover bg-center"
-              style={{
-                backgroundImage:
-                  "url('https://images.pexels.com/photos/261050/pexels-photo-261050.jpeg')",
-              }}
-            />
+          {/* باکس خالی که بعداً عکس/ویدئو شنا می‌گذاریم */}
+          <div className="rounded-3xl overflow-hidden shadow-2xl border border-sky-800 bg-sky-800/60">
+            <div className="h-48 sm:h-56 flex items-center justify-center text-sky-300 text-xs">
+              اینجا بعداً ویدئو/عکس شنا قرار می‌گیرد
+            </div>
           </div>
         </div>
       </section>
@@ -83,7 +79,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* فرم رزرو ساده با دکمه فیروزه‌ای */}
+      {/* فرم رزرو */}
       <section id="book" className="bg-white py-12 border-t border-sky-100">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-center text-2xl font-extrabold text-sky-900 mb-2">
