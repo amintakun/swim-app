@@ -66,7 +66,6 @@ export default function Home() {
               className="relative h-48 sm:h-56 w-full bg-cover bg-center transition-all duration-500"
               style={{ backgroundImage: `url(${sliderImages[current]})` }}
             >
-              {/* دکمه قبلی */}
               <button
                 type="button"
                 onClick={prevSlide}
@@ -74,7 +73,6 @@ export default function Home() {
               >
                 ‹
               </button>
-              {/* دکمه بعدی */}
               <button
                 type="button"
                 onClick={nextSlide}
@@ -83,7 +81,6 @@ export default function Home() {
                 ›
               </button>
 
-              {/* نقاط وضعیت اسلاید */}
               <div className="absolute bottom-2 inset-x-0 flex justify-center gap-1">
                 {sliderImages.map((_, index) => (
                   <span
@@ -99,33 +96,98 @@ export default function Home() {
         </div>
       </section>
 
-      {/* برنامه‌ها */}
+      {/* انواع کلاس‌ها */}
       <section id="programs" className="bg-sky-50 py-12">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-center text-2xl font-extrabold text-sky-900 mb-8">
-            چه نوع کلاسی می‌خواهید؟
+          <h2 className="text-center text-2xl font-extrabold text-sky-900 mb-3">
+            ثبت‌نام ترم جدید کلاس‌های شنا
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="rounded-2xl bg-white shadow-sm p-5 border border-sky-100">
-              <p className="text-3xl mb-2">🧒</p>
-              <h3 className="font-bold mb-1">کودکان ۴ تا ۱۲ سال</h3>
-              <p className="text-sm text-slate-600">
-                بازی‌محور و ایمن برای ازبین‌بردن ترس از آب و یادگیری پایه‌ای.
-              </p>
+          <p className="text-center text-sm text-slate-600 mb-8">
+            کلاس‌های متنوع برای همه؛ از آموزش رایگان تا دوره‌های تخصصی غواصی
+          </p>
+
+          <div className="bg-white rounded-3xl shadow-sm border border-sky-100 p-4 sm:p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="rounded-2xl border border-sky-100 bg-sky-50/60 p-4">
+                <p className="text-sm font-bold text-sky-900 mb-1">
+                  آموزش شنای رایگان
+                </p>
+                <p className="text-xs text-slate-600">
+                  برگزاری کلاس‌های شنا معرفی در مجموعه شما
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-sky-100 bg-white p-4">
+                <p className="text-sm font-bold text-sky-900 mb-1">
+                  شنای آقایان
+                </p>
+                <p className="text-xs text-slate-600">
+                  کلاس‌های عمومی و خصوصی آقایان در سانس‌های متنوع
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-sky-100 bg-white p-4">
+                <p className="text-sm font-bold text-sky-900 mb-1">
+                  شنای خصوصی
+                </p>
+                <p className="text-xs text-slate-600">
+                  کلاس ۱ به ۱ با مربی اختصاصی در استخر انتخابی شما
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-sky-100 bg-white p-4">
+                <p className="text-sm font-bold text-sky-900 mb-1">
+                  شنای بانوان
+                </p>
+                <p className="text-xs text-slate-600">
+                  ویژه بانوان، با مربیان خانم و سانس‌های امن و اختصاصی
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-sky-100 bg-white p-4">
+                <p className="text-sm font-bold text-sky-900 mb-1">
+                  شنای کودکان
+                </p>
+                <p className="text-xs text-slate-600">
+                  آموزش شنا از پایه به صورت بازی‌محور برای ۴ تا ۱۲ سال
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-sky-100 bg-white p-4">
+                <p className="text-sm font-bold text-sky-900 mb-1">
+                  آموزش غواصی
+                </p>
+                <p className="text-xs text-slate-600">
+                  دوره‌های مقدماتی تا پیشرفته، مناسب علاقه‌مندان جدی
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-sky-100 bg-white p-4">
+                <p className="text-sm font-bold text-sky-900 mb-1">
+                  آموزش سازمان‌ها
+                </p>
+                <p className="text-xs text-slate-600">
+                  پکیج‌های ویژه برای شرکت‌ها و سازمان‌ها، به همراه گزارش پیشرفت
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-sky-100 bg-white p-4">
+                <p className="text-sm font-bold text-sky-900 mb-1">
+                  شنای مدارس
+                </p>
+                <p className="text-xs text-slate-600">
+                  همکاری با مدارس برای برگزاری کلاس شنا در طول سال تحصیلی
+                </p>
+              </div>
             </div>
-            <div className="rounded-2xl bg-white shadow-sm p-5 border border-sky-100">
-              <p className="text-3xl mb-2">👨‍💼</p>
-              <h3 className="font-bold mb-1">بزرگسالان</h3>
-              <p className="text-sm text-slate-600">
-                از صفر تا تکنیک‌های حرفه‌ای، مناسب شاغلین با زمان‌بندی عصر و آخر هفته.
-              </p>
-            </div>
-            <div className="rounded-2xl bg-white shadow-sm p-5 border border-sky-100">
-              <p className="text-3xl mb-2">🤿</p>
-              <h3 className="font-bold mb-1">غواصی و پیشرفته</h3>
-              <p className="text-sm text-slate-600">
-                برای شناگران باتجربه که می‌خواهند تکنیک و استقامت خود را تقویت کنند.
-              </p>
+
+            <div className="mt-6 text-center">
+              <a
+                href="#book"
+                className="inline-flex items-center justify-center rounded-full bg-cyan-500 px-7 py-3 text-sm font-bold text-sky-900 hover:bg-cyan-400"
+              >
+                ثبت‌نام در کلاس‌های منتخب
+              </a>
             </div>
           </div>
         </div>
