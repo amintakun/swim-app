@@ -1,6 +1,16 @@
 "use client"
 
 import { useState } from "react"
+import {
+  Waves,
+  User,
+  Handshake,
+  UserRound,
+  Child,
+  LifeBuoy,
+  Building2,
+  School,
+} from "lucide-react"
 
 const sliderImages = [
   "https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg",
@@ -42,10 +52,13 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero با اسلایدر */}
+      {/* Hero */}
       <section className="bg-sky-900 text-sky-50">
         <div className="max-w-5xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-8 items-center">
           <div>
+            <p className="text-xs text-cyan-300 mb-2">
+              ثبت‌نام ترم جدید کلاس‌های شنا با تخفیف ویژه
+            </p>
             <h1 className="text-3xl sm:text-4xl font-extrabold mb-4">
               یادگیری شنا در استخرهای استاندارد
             </h1>
@@ -56,11 +69,11 @@ export default function Home() {
               href="#book"
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-3 text-sm font-bold text-sky-900 shadow-md hover:bg-cyan-300"
             >
-              رزرو اولین جلسه
+              شروع یادگیری
             </a>
           </div>
 
-          {/* اسلایدر عکس‌ها */}
+          {/* Slider */}
           <div className="rounded-3xl overflow-hidden shadow-2xl border border-sky-800 bg-sky-900/70">
             <div
               className="relative h-48 sm:h-56 w-full bg-cover bg-center transition-all duration-500"
@@ -96,95 +109,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* انواع کلاس‌ها */}
+      {/* Programs */}
       <section id="programs" className="bg-sky-50 py-12">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-center text-2xl font-extrabold text-sky-900 mb-3">
-            ثبت‌نام ترم جدید کلاس‌های شنا
-          </h2>
-          <p className="text-center text-sm text-slate-600 mb-8">
-            کلاس‌های متنوع برای همه؛ از آموزش رایگان تا دوره‌های تخصصی غواصی
-          </p>
-
           <div className="bg-white rounded-3xl shadow-sm border border-sky-100 p-4 sm:p-6">
+            <h2 className="text-center text-lg sm:text-xl font-extrabold text-sky-900 mb-2">
+              ثبت‌نام ترم جدید کلاس‌های شنا
+            </h2>
+            <p className="text-center text-xs sm:text-sm text-slate-600 mb-6">
+              انتخاب کلاس مناسب برای خودتان یا فرزندتان، فقط با یک کلیک
+            </p>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="rounded-2xl border border-sky-100 bg-sky-50/60 p-4">
-                <p className="text-sm font-bold text-sky-900 mb-1">
-                  آموزش شنای رایگان
-                </p>
-                <p className="text-xs text-slate-600">
-                  برگزاری کلاس‌های شنا معرفی در مجموعه شما
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-sky-100 bg-white p-4">
-                <p className="text-sm font-bold text-sky-900 mb-1">
-                  شنای آقایان
-                </p>
-                <p className="text-xs text-slate-600">
-                  کلاس‌های عمومی و خصوصی آقایان در سانس‌های متنوع
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-sky-100 bg-white p-4">
-                <p className="text-sm font-bold text-sky-900 mb-1">
-                  شنای خصوصی
-                </p>
-                <p className="text-xs text-slate-600">
-                  کلاس ۱ به ۱ با مربی اختصاصی در استخر انتخابی شما
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-sky-100 bg-white p-4">
-                <p className="text-sm font-bold text-sky-900 mb-1">
-                  شنای بانوان
-                </p>
-                <p className="text-xs text-slate-600">
-                  ویژه بانوان، با مربیان خانم و سانس‌های امن و اختصاصی
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-sky-100 bg-white p-4">
-                <p className="text-sm font-bold text-sky-900 mb-1">
-                  شنای کودکان
-                </p>
-                <p className="text-xs text-slate-600">
-                  آموزش شنا از پایه به صورت بازی‌محور برای ۴ تا ۱۲ سال
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-sky-100 bg-white p-4">
-                <p className="text-sm font-bold text-sky-900 mb-1">
-                  آموزش غواصی
-                </p>
-                <p className="text-xs text-slate-600">
-                  دوره‌های مقدماتی تا پیشرفته، مناسب علاقه‌مندان جدی
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-sky-100 bg-white p-4">
-                <p className="text-sm font-bold text-sky-900 mb-1">
-                  آموزش سازمان‌ها
-                </p>
-                <p className="text-xs text-slate-600">
-                  پکیج‌های ویژه برای شرکت‌ها و سازمان‌ها، به همراه گزارش پیشرفت
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-sky-100 bg-white p-4">
-                <p className="text-sm font-bold text-sky-900 mb-1">
-                  شنای مدارس
-                </p>
-                <p className="text-xs text-slate-600">
-                  همکاری با مدارس برای برگزاری کلاس شنا در طول سال تحصیلی
-                </p>
-              </div>
+              {/* آموزش شنای رایگان */}
+              <ProgramCard
+                title="آموزش شنای رایگان"
+                desc="برگزاری کلاس‌های معارفه و آشنایی با شنا در مجموعه شما"
+                Icon={Waves}
+              />
+              {/* شنای آقایان */}
+              <ProgramCard
+                title="شنای آقایان"
+                desc="کلاس‌های عمومی و خصوصی آقایان در سانس‌های متنوع"
+                Icon={User}
+              />
+              {/* شنای خصوصی */}
+              <ProgramCard
+                title="شنای خصوصی"
+                desc="کلاس ۱ به ۱ با مربی اختصاصی در استخر انتخابی شما"
+                Icon={Handshake}
+              />
+              {/* شنای بانوان */}
+              <ProgramCard
+                title="شنای بانوان"
+                desc="ویژه بانوان، با مربیان خانم و سانس‌های امن و اختصاصی"
+                Icon={UserRound}
+              />
+              {/* شنای کودکان */}
+              <ProgramCard
+                title="شنای کودکان"
+                desc="آموزش شنا به‌صورت بازی‌محور برای ۴ تا ۱۲ سال"
+                Icon={Child}
+              />
+              {/* آموزش غواصی */}
+              <ProgramCard
+                title="آموزش غواصی"
+                desc="دوره‌های مقدماتی تا پیشرفته برای علاقه‌مندان جدی"
+                Icon={LifeBuoy}
+              />
+              {/* آموزش سازمان‌ها */}
+              <ProgramCard
+                title="آموزش سازمان‌ها"
+                desc="پکیج‌های ویژه برای شرکت‌ها و سازمان‌ها، به همراه گزارش پیشرفت"
+                Icon={Building2}
+              />
+              {/* شنای مدارس */}
+              <ProgramCard
+                title="شنای مدارس"
+                desc="همکاری با مدارس برای برگزاری کلاس شنا در طول سال تحصیلی"
+                Icon={School}
+              />
             </div>
 
             <div className="mt-6 text-center">
               <a
                 href="#book"
-                className="inline-flex items-center justify-center rounded-full bg-cyan-500 px-7 py-3 text-sm font-bold text-sky-900 hover:bg-cyan-400"
+                className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-3 text-sm font-bold text-sky-900 hover:bg-cyan-300"
               >
                 ثبت‌نام در کلاس‌های منتخب
               </a>
@@ -193,7 +183,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* فرم رزرو */}
+      {/* Book form */}
       <section id="book" className="bg-white py-12 border-t border-sky-100">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-center text-2xl font-extrabold text-sky-900 mb-2">
@@ -228,7 +218,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* فوتر */}
+      {/* Footer */}
       <footer className="bg-sky-900 text-sky-100 py-6">
         <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
           <p>© ۱۴۰۴ آکادمی حرفه‌ای شنا • تمامی حقوق محفوظ است.</p>
@@ -240,6 +230,26 @@ export default function Home() {
           </a>
         </div>
       </footer>
+    </div>
+  )
+}
+
+type CardProps = {
+  title: string
+  desc: string
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+}
+
+function ProgramCard({ title, desc, Icon }: CardProps) {
+  return (
+    <div className="rounded-2xl border border-sky-100 bg-white p-4 flex items-start justify-between gap-3">
+      <div>
+        <p className="text-sm font-bold text-sky-900 mb-1">{title}</p>
+        <p className="text-xs text-slate-600">{desc}</p>
+      </div>
+      <div className="h-10 w-10 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500">
+        <Icon className="w-5 h-5" />
+      </div>
     </div>
   )
 }
